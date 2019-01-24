@@ -45,10 +45,10 @@
   ![5-4](5-4.png)
   图 5-4 订单服务响应答复
 
-一个更复杂的场景可能包含额外的步骤，比如在客户信用被检查的同时，预留库存。
+一个更复杂的场景可能包含额外的步骤，比如在客户信用被检查的同时，预留库存。
 
 假设（a）每个服务以原子方式更新数据库并发布事件 - 稍后再详述 - 以及（b）消息中间件保证事件至少传递一次，然后，您可以实现跨多个服务的业务事务。值得注意的是，这些不是ACID事务。它们提供了许更弱的保证，例如最终一致性。此事务模型称为BASE模型。
 
-您还可以使用事件来维护预加入由物化视图（materialized views），使用由多个微服务拥有的数据。维护视图的服务订阅相关事件并更新视图。图5-5描述了Customer Order View Updater Service 基于Customer Service和Order Service所推送的事件更新Customer Order View。
+您还可以使用事件来维护预加入由物化视图（materialized views），使用由多个微服务拥有的数据。维护视图的服务订阅相关事件并更新视图。图5-5描述了Customer Order View Updater Service 基于Customer Service和Order Service所推送的事件更新Customer Order View。
 ![5-5](5-5.png)
 图 5-5 客户订单视图由两个服务访问。
