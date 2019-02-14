@@ -12,7 +12,7 @@
 
 比如，图2-1展示了在Amazon安卓移动客户端中滚动浏览商品详情而看到的页面
 
-![2-1](2-1.png)
+![2-1](images/2-1.png)
 图2-1 购物应用示例
 
 尽管这是个只能手机的应用，商品详情页却展示了很多信息。比如，不仅仅只有名称，概况与价格的基本产品信息，该页面还展示了：
@@ -40,7 +40,7 @@ GET api.company.com/productdetails/productId
 - 运输服务-运输选项，截止日期与费用，drawn separately from the shipping provider’s API与运输服务供应商的API独立
 - 推荐服务-建议的商品
   
-![2-2](2-2.png)
+![2-2](images/2-2.png)
 图2-2将移动客户端的需求映射到相关的微服务
 
 我们需要决定移动端如何访问这些服务。我们来看看选择项。
@@ -65,7 +65,7 @@ https://serviceName.api.company.name
 通常，更好的方法是使用众所周知的API Gateway。API Gateway是进入系统的单一入口点的服务器。有点像基于对象设计中的Facade模式。API Gateway将内部系统架构封装到内部，然后为每一个客户端定做一个API。API Gateway也有其他的功能，比如认证，监控，负载均衡，混存，请求塑造与管理，静态响应处理。
 
 图2-3显示了API Gateway通常如何适用与架构
-![2-3](2-3.png)
+![2-3](images/2-3.png)
 图2-3 使用API Gateway的微服务
 
 API Gateway负责请求路由，合成，协议转换。来自客户端的请求首先经过API Gateway，然后在路由到合适的微服务。API Gateway通常通过调用多个微服务并聚合结果来处理请求。它可以在Web协议（如HTTP和WebSocket）和内部使用的非web友好协议之间进行转换。
